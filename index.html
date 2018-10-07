@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    body{padding-top:10px}
+        .all_bg{
+            width:800px;
+            height:600px;
+            margin:0 auto;
+        }
+        #allcanvas{
+            position:relative;
+            width:800px;
+            height:600px;
+            margin:0;
+        }
+        #canvas1{
+            position:absolute;
+            width:800px;
+            height:600px;
+            z-index:1;
+            bottom:0;
+            left:0
+        }
+      #canvas2{
+          position:absolute;
+          width:800px;
+          height:600px;
+          z-index:0;
+          bottom:0;
+          left:0
+      }
+    </style>
+</head>
+<body>
+<div class="all_bg">
+    <div id="allcanvas">
+        <canvas id="canvas1" width="800" height="600">
+           <!-- 前面画布[大鱼小鱼]-->
+        </canvas>
+        <canvas id="canvas2" width="800" height="600">
+            <!-- 后面面画布[]-->
+        </canvas>
+    </div>
+    <!--游戏入口-->
+
+</div>
+<script src="js/commonFunctions.js"></script>
+<script src="js/main.js"></script>
+<script src="js/background.js"></script>
+<!--加载海葵的类文件-->
+<script src="js/ane.js"></script>
+<!--加载食物类-->
+<script src="js/fruit.js"></script>
+<script src="js/mom.js"></script>
+<script src="js/collsion.js"></script>
+<script src="js/baby.js"></script>
+</body>
+</html>

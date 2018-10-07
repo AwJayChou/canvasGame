@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{text-align:center}
+        svg{backgroung:#ddd}
+    </style>
+</head>
+<body>
+<svg id="s3"width="800"height="600"></svg>
+<script>
+    //创建随机数
+    function rn(min,max){
+        var num = Math.random()*(max-min)+min;
+        return Math.floor(num);
+    }
+    function rc(min,max){
+        var r=rn(min,max);
+        var g=rn(min,max);
+        var b=rn(min,max);
+        return `rgb(${r},${g},${b})`;
+    }
+    //console.log(rn(100,150));
+    var s3=document.getElementById("s3");
+    for(var i=0;i<30;i++){
+        var c=document.createElementNS(
+            "http://www.w3.org/2000/svg","circle");
+        c.setAttribute("r",rn(10,80));
+        //圆心
+        c.setAttribute("cx",rn(0,800));
+        c.setAttribute("cy",rn(0,600));
+        //填充色
+        c.setAttribute("fill",rc(0,180));
+        c.setAttribute("fill-opacity",Math.random());
+        s3.appendChild(c);
+         c.onclick=function(){
+             //预存this
+             var that=this;
+             c.onclick=null;
+             var t=setInterval(function(){
+                var r=parseInt(that.getAttribute("r"));
+                var p=parseFloat(that.getAttribute("fill-opacity"));
+                r*=1.05;
+                p*=0.9;
+                that.setAttribute("r",r);
+                that.setAttribute("fill-opacity",p);
+                 if(p<0.001){
+                     clearInterval(t);
+                     s3.removeChild(that);
+                 }
+             },1000/32);
+
+         }
+    }
+
+</script>
+</body>
+</html>

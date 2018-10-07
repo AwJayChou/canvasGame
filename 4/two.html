@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        svg,canvas{
+            background:#ddd;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script src="js1/two.js"></script>
+<script>
+    var box=document.getElementById("box");
+    //1.创建2d对象
+    var two =new Two({
+        width:500,
+        height:400,
+        type:Two.Types.svg
+    }).appendTo(box);
+    var c=two.makeCircle(0,0,100);
+    var r=two.makeRectangle(200,0,100,100);
+    var g=two.makeGroup(r,c);
+    g.translation.set(200,100);
+    g.rotation=30*Math.PI/180;
+    two.update();
+    /*
+     var two =new Two({
+        width:500,
+        height:400,
+        type:Two.Types.svg
+    }).appendTo(box);
+    var c=two.makeCircle(50,50,25);
+    var r=two.makeRectangle(250,250,50,50);
+    r.rotation=60*Math.PI/180;
+    two.update();
+     */
+</script>
+</body>
+</html>

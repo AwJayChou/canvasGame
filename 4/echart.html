@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js1/echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width:600px;
+    height:400px;">
+</div>
+<script>
+    //1:获取元素，初始echarts实例
+    var main = document.getElementById("main");
+    var myChart = echarts.init(main);
+    //2:指定图表数据源和配置项目
+    var option = {
+        title:{text:"文华老师内衣style"},
+        legend:{data:["销量"]},
+        xAxis:{data:["貂绒","貂皮","纯毛","羊绒"]},
+        yAxis:{},
+        series:[{
+            name:"前端技术汇总",
+            type:"pie",   //bar柱状统计图/line折线
+            radius:"50%",//半径
+            roseType:"angle",//饼图的类型
+            data:[
+                {value:255,name:"html"},
+                {value:274,name:"css"},
+                {value:335,name:"js"},
+                {value:500,name:"canvas"},
+                ] //15:29--15:30
+        }]
+    };
+    //3:指定echarts实例配置项目
+    myChart.setOption(option);
+</script>
+</body>
+</html>

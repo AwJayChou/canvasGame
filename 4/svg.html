@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{text-align:center;}
+        svg{background:#ddd;}
+    </style>
+</head>
+<body>
+<svg id="s3" width="500"height="400">
+    <rect id="r3" width="30"height="300"x="280"y="100"
+          fill="#faa"stroke="#800"fill-opacity="0.5"></rect>
+</svg>
+<script>
+    var r3=document.getElementById("r3");
+    r3.onmouseover=function(){
+        this.setAttribute("fill-opacity",1);
+
+    }
+    r3.onmouseout=function(){
+        this.setAttribute("fill-opacity",0.5);
+
+    }
+</script>
+</body>
+</html>
